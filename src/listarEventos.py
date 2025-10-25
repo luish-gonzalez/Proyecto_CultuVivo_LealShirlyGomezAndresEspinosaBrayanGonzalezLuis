@@ -13,3 +13,8 @@ def cargar_eventos(ruta_archivo):
     except json.JSONDecodeError:
         print(f"Error: El archivo {ruta_archivo} no es un JSON válido.")
         return []
+
+def listar_eventos(eventos):
+    if not eventos:
+        print("No hay eventos para mostrar.")
+        return
