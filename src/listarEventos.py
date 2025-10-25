@@ -46,4 +46,4 @@ def mostrarEventosRegistrados(eventos, eventos_registrados):
             nombre = evento.get('nombre', 'Desconocido')
             fecha = evento.get('fecha', 'Desconocida')
             ubicacion = evento.get('ubicacion', 'Desconocida')
-            print(f"Evento: {nombre}\nFecha: {fecha}\nUbicación: {ubicacion}\n{'-'40}")
+            print(f"Evento: {nombre}\nFecha: {fecha}\nUbicación: {ubicacion}\n{'-'*40}")
