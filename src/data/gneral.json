@@ -1,0 +1,32 @@
+{
+    "asistentes": {
+        "id":{
+            "id":"id",
+            "nombre":"nombre",
+            "contacto":"correo",
+            "tipo de boleto":["VIP", "GENERAL", "PLATINO"],
+            "estado":["confirmado", "en espera"]
+        }
+    },
+
+    "artistas":{
+        "nombre": {
+            "nombre":"nombreaArt",
+            "tipo de presentacion":"tipo",
+            "duracion de la actuacion":"duracion"
+        }
+
+    },
+
+    "eventos":{
+        "nombre": { 
+            "nombre":"nombre",
+            "fecha":"fecha",
+            "hora":"hora",
+            "lugar":"lugar",
+            "capacidad maxima":"maxcap",
+            "artistas":"nombreArt"
+
+        }
+    }
+}
