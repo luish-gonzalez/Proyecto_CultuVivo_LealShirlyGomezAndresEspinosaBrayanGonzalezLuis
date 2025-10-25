@@ -26,7 +26,7 @@ def listar_eventos(eventos):
         hora = evento.get('hora', 'Desconocida')
         artistas = evento.get('artistas', [])
         capacidad = evento.get('maxcap', 'Desconocida')
-        print(f"Evento: {nombre}\nFecha: {fecha}\nUbicación: {ubicacion}\nHora: {hora}\nArtistas: {', '.join(artistas)}\nCapacidad Máxima: {capacidad}\n{'-'40}")
+        print(f"Evento: {nombre}\nFecha: {fecha}\nUbicación: {ubicacion}\nHora: {hora}\nArtistas: {', '.join(artistas)}\nCapacidad Máxima: {capacidad}\n{'-'*40}")
 
 def regisrarseEnEvento(eventos, nombre_evento):
     for evento in eventos:
@@ -34,3 +34,8 @@ def regisrarseEnEvento(eventos, nombre_evento):
             print(f"Te has registrado exitosamente en el evento: {nombre_evento}")
             return
     print(f"El evento '{nombre_evento}' no se encontró.")
+
+def mostrarEventosRegistrados(eventos, eventos_registrados):
+    if not eventos_registrados:
+        print("No estás registrado en ningún evento.")
+        return
