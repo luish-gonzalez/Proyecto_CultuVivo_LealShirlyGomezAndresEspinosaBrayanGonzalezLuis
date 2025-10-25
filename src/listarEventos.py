@@ -18,3 +18,19 @@ def listar_eventos(eventos):
     if not eventos:
         print("No hay eventos para mostrar.")
         return
+    
+    for evento in eventos:
+        nombre = evento.get('nombre', 'Desconocido')
+        fecha = evento.get('fecha', 'Desconocida')
+        ubicacion = evento.get('lugar', 'Desconocida')
+        hora = evento.get('hora', 'Desconocida')
+        artistas = evento.get('artistas', [])
+        capacidad = evento.get('maxcap', 'Desconocida')
+        print(f"Evento: {nombre}\nFecha: {fecha}\nUbicación: {ubicacion}\nHora: {hora}\nArtistas: {', '.join(artistas)}\nCapacidad Máxima: {capacidad}\n{'-'40}")
+
+def regisrarseEnEvento(eventos, nombre_evento):
+    for evento in eventos:
+        if evento.get('nombre') == nombre_evento:
+            print(f"Te has registrado exitosamente en el evento: {nombre_evento}")
+            return
+    print(f"El evento '{nombre_evento}' no se encontró.")
