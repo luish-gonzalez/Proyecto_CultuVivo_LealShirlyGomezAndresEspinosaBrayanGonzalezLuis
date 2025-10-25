@@ -39,3 +39,11 @@ def mostrarEventosRegistrados(eventos, eventos_registrados):
     if not eventos_registrados:
         print("No estás registrado en ningún evento.")
         return
+    
+    print("Eventos en los que estás registrado:")
+    for evento in eventos:
+        if evento.get('nombre') in eventos_registrados:
+            nombre = evento.get('nombre', 'Desconocido')
+            fecha = evento.get('fecha', 'Desconocida')
+            ubicacion = evento.get('ubicacion', 'Desconocida')
+            print(f"Evento: {nombre}\nFecha: {fecha}\nUbicación: {ubicacion}\n{'-'40}")
