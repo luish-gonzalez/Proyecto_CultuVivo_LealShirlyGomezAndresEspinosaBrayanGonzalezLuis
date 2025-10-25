@@ -1,4 +1,4 @@
-import registro_asistentes 
+from gestionasistente import registro_asistentes 
 
 def menu_asistente():
         print("1. Registrarse \n2.Ingresar \n3.Regresar al menu principal")
