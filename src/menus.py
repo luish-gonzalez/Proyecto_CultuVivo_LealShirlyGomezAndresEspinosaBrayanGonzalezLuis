@@ -1,5 +1,6 @@
 
-from gestionadministrador import cargar_eventos, cargar_artistas,crear_evento
+from gestionadministrador import cargar_eventos, cargar_artistas,crear_evento, listar_eventos, editar_evento,eliminar_evento, asignar_artista_a_evento, guardar_eventos, guardar_artistas
+
 from utils import clear_screen, pause_screen
 
 

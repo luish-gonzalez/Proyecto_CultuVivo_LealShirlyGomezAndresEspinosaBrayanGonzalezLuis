@@ -113,3 +113,29 @@ def asignar_artista_a_evento(eventos):
     else:
         print("Índice no válido.")
     pause_screen()
+
+# --asignar artista a evento--
+
+def asignar_artista_a_evento(eventos):
+    clear_screen()
+    print("--- Asignar artista a evento ---")
+    if not eventos:
+        print("No hay eventos disponibles.")
+        pause_screen()
+        return
+    listar_eventos(eventos)
+    idx_evento = int(input("¿A qué evento desea asignar un artista? (número): ")) - 1
+    if 0 <= idx_evento < len(eventos):
+        nombre_artista = input("Nombre del artista: ")
+        tipo_presentacion = input("Tipo de presentación (ej: música, danza): ")
+        duracion = input("Duración de la presentación (ej: 60 minutos): ")
+        artista = {
+            "nombre": nombre_artista,
+            "tipo_presentacion": tipo_presentacion,
+            "duracion": duracion
+        }
+        eventos[idx_evento]["artistas"].append(artista)
+        print("Artista asignado correctamente al evento.")
+    else:
+        print("Índice no válido.")
+    pause_screen()
