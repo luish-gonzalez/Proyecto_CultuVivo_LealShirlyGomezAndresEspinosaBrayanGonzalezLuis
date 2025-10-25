@@ -1,6 +1,6 @@
 import json
 
-rutaArchivos = "data/eventos.json"
+ruta_archivo = "data/eventos.json"
 
 def cargar_eventos(ruta_archivo):
     try:
