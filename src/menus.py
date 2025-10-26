@@ -1,13 +1,13 @@
 
 from gestionadministrador import cargar_eventos, cargar_artistas,crear_evento, listar_eventos, editar_evento,eliminar_evento, asignar_artista_a_evento, guardar_eventos, guardar_artistas
 from gestionartista import menu_artistas
-from gestionasistente import menu_asistente
+from gestionasistente import cargar_eventos, registro_asistente, listar_eventos, mostrarEventosRegistrados
 from utils import clear_screen, pause_screen
 
-
+ruta_archivo = "data/eventos.json"
 
 def menu_administrador():
-    eventos = cargar_eventos()
+    eventos = cargar_eventos(ruta_archivo)
     artistas = cargar_artistas()
     while True:
         clear_screen()
@@ -43,8 +43,28 @@ def menu_administrador():
             pause_screen()
 
 def menu_asistente():
-    print("1. Registrarse en un evento")
-    print("2. Ver eventos registrados")
-    print("3. Regresar al menú principal")
+    print("--- Menú de Asistente ---")
+    print("1. Registrarse como asistente")
+    print("2. Listar eventos disponibles")
+    print("3. Ver eventos registrados")
+    print("4. Regresar al menú principal")
     opcion = input("Seleccione una opción: ")
-    return opcion
+    if opcion == '1':
+        nombre, id_asistente = registro_asistente()
+        print(f"Registro exitoso. Nombre: {nombre}, ID: {id_asistente}")
+        pause_screen()
+    elif opcion == '2':
+        eventos = cargar_eventos(ruta_archivo)
+        listar_eventos(eventos)
+        pause_screen()
+    elif opcion == '3':
+        eventos = cargar_eventos(ruta_archivo)
+        eventos_registrados = []  
+        mostrarEventosRegistrados(eventos, eventos_registrados)
+        pause_screen()
+    elif opcion == '4':
+        print("Regresando al menú principal.")
+        pause_screen()
+    else:
+        print("Opción inválida. Por favor intente de nuevo.")
+        pause_screen()

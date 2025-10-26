@@ -1,4 +1,4 @@
-from gestionasistente import registro_asistentes
+from gestionasistente import registro_asistente,cargar_eventos
 
 def menu_asistente():
         print("1. Registrarse \n2.Ingresar \n3.Regresar al menu principal")
@@ -11,14 +11,14 @@ def ejecutar_menu_asistente():
         opcion = menu_asistente()
         match opcion:
             case "1":
-                registro_asistentes.registrarse()
+                registro_asistente.cargar_eventos()
             case "2":
-                datos=registro_asistentes.cargar_datos()
+                datos=registro_asistente.cargar_eventos()
                 id_asistente=input("Ingrese su ID: ")
                 if id_asistente not in datos['asistentes']:
                     print("Numero de ID no encontrado. Para ingresar vaya a registrarse")
                 else:
-                    registro_asistentes.ver_datos()
+                    registro_asistente.cargar_eventos()
             case "3":
                 print("Regresando al menu de inicio.")
                 break
