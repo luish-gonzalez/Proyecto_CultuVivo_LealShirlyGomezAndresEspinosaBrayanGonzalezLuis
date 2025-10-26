@@ -42,4 +42,20 @@ def registro_asistente():
     guardar_datos(datos)
     print("Se completo el registro. Guardado Correctamente")
 
+def ver_datos():
+    datos = cargar_datos()
+    id_asistente = input("Ingrese su número de identificación: ")
+
+    if id_asistente not in datos["asistentes"]:
+        print("No se encontró ningún asistente con ese ID.")
+        return
+
+    asistente = datos["asistentes"][id_asistente]
+
+    print("\n=== Datos del asistente ===")
+    print(f"ID: {asistente['id_asistente']}")
+    print(f"Nombre: {asistente['nombre_completo']}")
+    print(f"Correo: {asistente['email']}")
+    print(f"Tipo de boleto: {asistente['boleto']}")
+    print(f"Estado: {asistente['estado']}")
 
