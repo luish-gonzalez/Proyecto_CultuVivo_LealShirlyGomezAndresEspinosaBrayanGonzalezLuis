@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "nombre": "Banda XYZ",
+    "tipo_presentacion": "Música",
+    "duracion": "120 minutos",
+    "contacto": "contacto@banda-xyz.com"
+  },
+  {
+    "nombre": "Compañía de Danza ABC",
+    "tipo_presentacion": "Danza",
+    "duracion": "90 minutos",
+    "contacto": "info@danzaabc.com"
+  }
+]

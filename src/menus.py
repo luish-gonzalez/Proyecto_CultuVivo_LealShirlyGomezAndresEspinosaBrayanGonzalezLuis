@@ -1,10 +1,37 @@
 
-from gestionadministrador import cargar_eventos, cargar_artistas,crear_evento, listar_eventos, editar_evento,eliminar_evento, asignar_artista_a_evento, guardar_eventos, guardar_artistas
-from gestionartista import menu_artistas
-from gestionasistente import cargar_eventos, registro_asistente, listar_eventos, mostrarEventosRegistrados
+from gestionadministrador import cargar_eventos,crear_evento, listar_eventos, editar_evento,eliminar_evento, asignar_artista_a_evento, guardar_eventos
+from gestionartista import menu_artistas, cargar_artistas, guardar_artistas
+from gestionasistente import cargar_eventos, registro_asistente, mostrarEventosRegistrados
 from utils import clear_screen, pause_screen
 
 ruta_archivo = "data/eventos.json"
+
+
+
+
+def main():
+    while True:
+        print("===== CULTUVIVO=====")
+        print("1. Iniciar como Administrador")
+        print("2. Iniciar como Asistente")
+        print("0. Salir")
+        opcion = input("Opción: ")
+
+        match opcion:
+            case "1":
+                menu_administrador()
+            case "2": 
+                menu_asistente()
+            case "0":
+                print("Saliendo del programa")
+                break
+            case _:
+                print("Opcion invalida, ingresa una nueva opcion.")
+
+
+
+
+
 
 def menu_administrador():
     eventos = cargar_eventos(ruta_archivo)

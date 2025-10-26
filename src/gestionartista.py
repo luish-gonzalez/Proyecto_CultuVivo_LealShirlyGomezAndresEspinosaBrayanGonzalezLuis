@@ -1,6 +1,4 @@
 import json
-from signal import pause
-
 from utils import clear_screen, pause_screen
 
 # --- GESTIÓN DE ARTISTAS ---
@@ -87,7 +85,7 @@ def eliminar_artista(artistas):
         print("Artista eliminado correctamente.")
     else:
         print("Índice no válido.")
-    pause_screen()
+        pause_screen()
 
 def menu_artistas(artistas):
     while True:
