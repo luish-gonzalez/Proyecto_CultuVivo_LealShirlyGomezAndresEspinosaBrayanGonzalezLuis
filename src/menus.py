@@ -1,6 +1,7 @@
 
 from gestionadministrador import cargar_eventos, cargar_artistas,crear_evento, listar_eventos, editar_evento,eliminar_evento, asignar_artista_a_evento, guardar_eventos, guardar_artistas
 from gestionartista import menu_artistas
+from gestionasistente import menu_asistente
 from utils import clear_screen, pause_screen
 
 
@@ -41,3 +42,9 @@ def menu_administrador():
             print("Opción inválida")
             pause_screen()
 
+def menu_asistente():
+    print("1. Registrarse en un evento")
+    print("2. Ver eventos registrados")
+    print("3. Regresar al menú principal")
+    opcion = input("Seleccione una opción: ")
+    return opcion

@@ -1,4 +1,4 @@
-from gestionasistente import registro_asistentes 
+from gestionasistente import registro_asistentes
 
 def menu_asistente():
         print("1. Registrarse \n2.Ingresar \n3.Regresar al menu principal")
@@ -11,7 +11,7 @@ def ejecutar_menu_asistente():
         opcion = menu_asistente()
         match opcion:
             case "1":
-                registro_asistentes.registro_asistente()
+                registro_asistentes.registrarse()
             case "2":
                 datos=registro_asistentes.cargar_datos()
                 id_asistente=input("Ingrese su ID: ")

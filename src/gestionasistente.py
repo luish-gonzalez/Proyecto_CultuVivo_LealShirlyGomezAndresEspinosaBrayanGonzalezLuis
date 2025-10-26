@@ -1,4 +1,4 @@
-import json
+import json 
 
 ruta_archivo = "data/eventos.json"
 
@@ -47,3 +47,9 @@ def mostrarEventosRegistrados(eventos, eventos_registrados):
             fecha = evento.get('fecha', 'Desconocida')
             ubicacion = evento.get('ubicacion', 'Desconocida')
             print(f"Evento: {nombre}\nFecha: {fecha}\nUbicación: {ubicacion}\n{'-'*40}")
+
+def registro_asistente():
+    print("bienvenido al registro de asistentes")
+    nombre = input("Ingrese su nombre: ")
+    id_asistente = input("Ingrese su ID: ")
+    return nombre, id_asistente
