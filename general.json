@@ -1,0 +1,13 @@
+{
+    "asistentes": {
+        "1097783149": {
+            "id_asistente": 1097783149,
+            "nombre_completo": "karen villa cruz",
+            "email": "karen101@gmail.com",
+            "boleto": "1",
+            "estado": "confirmado"
+        }
+    },
+    "artistas": {},
+    "eventos": {}
+}

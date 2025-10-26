@@ -42,3 +42,4 @@ def registro_asistente():
     guardar_datos(datos)
     print("Se completo el registro. Guardado Correctamente")
 
+
