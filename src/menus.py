@@ -11,8 +11,9 @@ ruta_archivo = "data/eventos.json"
 
 def main():
     while True:
-        print("===== CULTUVIVO=====")
-        print("1. Iniciar como Administrador")
+        clear_screen()
+        print("===== BIENVENIDO A CULTUVIVO=====")
+        print("\n1. Iniciar como Administrador")
         print("2. Iniciar como Asistente")
         print("0. Salir")
         opcion = input("Opción: ")
@@ -70,6 +71,7 @@ def menu_administrador():
             pause_screen()
 
 def menu_asistente():
+    clear_screen()
     print("--- Menú de Asistente ---")
     print("1. Registrarse como asistente")
     print("2. Listar eventos disponibles")
@@ -77,19 +79,23 @@ def menu_asistente():
     print("4. Regresar al menú principal")
     opcion = input("Seleccione una opción: ")
     if opcion == '1':
+        clear_screen()
         nombre, id_asistente = registro_asistente()
         print(f"Registro exitoso. Nombre: {nombre}, ID: {id_asistente}")
         pause_screen()
     elif opcion == '2':
+        clear_screen()
         eventos = cargar_eventos(ruta_archivo)
         listar_eventos(eventos)
         pause_screen()
     elif opcion == '3':
+        clear_screen()
         eventos = cargar_eventos(ruta_archivo)
         eventos_registrados = []  
         mostrarEventosRegistrados(eventos, eventos_registrados)
         pause_screen()
     elif opcion == '4':
+        clear_screen()
         print("Regresando al menú principal.")
         pause_screen()
     else:
