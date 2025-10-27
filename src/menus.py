@@ -2,6 +2,7 @@
 from gestionadministrador import cargar_eventos,crear_evento, listar_eventos, editar_evento,eliminar_evento, asignar_artista_a_evento, guardar_eventos
 from gestionartista import menu_artistas, cargar_artistas, guardar_artistas
 from gestionasistente import cargar_eventos, registro_asistente, mostrarEventosRegistrados
+from registro_asistente import registro_asistente, ver_datos
 from utils import clear_screen, pause_screen
 
 ruta_archivo = "data/eventos.json"
@@ -74,27 +75,31 @@ def menu_asistente():
     clear_screen()
     print("--- Menú de Asistente ---")
     print("1. Registrarse como asistente")
-    print("2. Listar eventos disponibles")
-    print("3. Ver eventos registrados")
-    print("4. Regresar al menú principal")
+    print("2. Ingresar como asistente")
+    print("3. Listar eventos disponibles")
+    print("4. Ver eventos registrados")
+    print("5. Regresar al menú principal")
     opcion = input("Seleccione una opción: ")
     if opcion == '1':
         clear_screen()
-        nombre, id_asistente = registro_asistente()
-        print(f"Registro exitoso. Nombre: {nombre}, ID: {id_asistente}")
+        registro_asistente()
         pause_screen()
     elif opcion == '2':
+        clear_screen()
+        ver_datos()
+        pause_screen()
+    elif opcion == '3':
         clear_screen()
         eventos = cargar_eventos(ruta_archivo)
         listar_eventos(eventos)
         pause_screen()
-    elif opcion == '3':
+    elif opcion == '4':
         clear_screen()
         eventos = cargar_eventos(ruta_archivo)
         eventos_registrados = []  
         mostrarEventosRegistrados(eventos, eventos_registrados)
         pause_screen()
-    elif opcion == '4':
+    elif opcion == '5':
         clear_screen()
         print("Regresando al menú principal.")
         pause_screen()

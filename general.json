@@ -6,6 +6,13 @@
             "email": "karen101@gmail.com",
             "boleto": "1",
             "estado": "confirmado"
+        },
+        "109786321": {
+            "id_asistente": 109786321,
+            "nombre_completo": "mariana perez suñiga",
+            "email": "marana@gmail.com",
+            "boleto": "1. vip",
+            "estado": "confirmado"
         }
     },
     "artistas": {},
