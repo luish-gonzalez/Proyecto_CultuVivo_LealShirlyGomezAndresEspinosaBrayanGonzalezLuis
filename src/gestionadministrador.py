@@ -35,7 +35,7 @@ def crear_evento(eventos):
         return
     lugar = input("Lugar: ").strip()
     if not lugar:
-        print("Hora no puede ser vacía")
+        print("Lugar no puede ser vacía")
         return
     while True:
         try:
@@ -93,32 +93,43 @@ def editar_evento(eventos):
         pause_screen()
         return
     if 0 <= idx < len(eventos):
-        nuevo_nombre = input("Nuevo nombre: ").strip()
-        if not nuevo_nombre:
-            print("Nombre no puede estar vacío")
-            pause_screen()
-            return
-        eventos[idx]["nombre"] = nuevo_nombre
-        eventos[idx]["fecha"] = input("Nueva fecha (YYYY-MM-DD): ").strip()
-        eventos[idx]["hora"] = input("Nueva hora (HH:MM): ").strip()
-        eventos[idx]["lugar"] = input("Nuevo lugar: ").strip()
+        evento = eventos[idx]
+
+        # Editar cada campo, manteniendo el anterior si el usuario deja vacío
+        nuevo_nombre = input(f"Nuevo nombre [{evento['nombre']}]: ").strip()
+        if nuevo_nombre:
+            evento["nombre"] = nuevo_nombre
+
+        nueva_fecha = input(f"Nueva fecha (YYYY-MM-DD) [{evento['fecha']}]: ").strip()
+        if nueva_fecha:
+            evento["fecha"] = nueva_fecha
+
+        nueva_hora = input(f"Nueva hora (HH:MM) [{evento['hora']}]: ").strip()
+        if nueva_hora:
+            evento["hora"] = nueva_hora
+
+        nuevo_lugar = input(f"Nuevo lugar [{evento['lugar']}]: ").strip()
+        if nuevo_lugar:
+            evento["lugar"] = nuevo_lugar
 
         while True:
-            capacidad_str = input("Nueva capacidad: ").strip()
+            capacidad_str = input(f"Nueva capacidad [{evento['capacidad_maxima']}]: ").strip()
             if capacidad_str == "":
-                print("Capacidad no puede estar vacía.")
-                continue
+                break  # Mantiene la anterior
             try:
                 capacidad = int(capacidad_str)
                 if capacidad <= 0:
                     print("La capacidad debe ser un número positivo.")
                     continue
-                eventos[idx]["capacidad_maxima"] = capacidad
+                evento["capacidad_maxima"] = capacidad
                 break
             except ValueError:
                 print("Por favor, ingrese un número válido.")
 
-        eventos[idx]["descripcion"] = input("Nueva descripción: ").strip()
+        nueva_descripcion = input(f"Nueva descripción [{evento['descripcion']}]: ").strip()
+        if nueva_descripcion:
+            evento["descripcion"] = nueva_descripcion
+
         print("Evento editado correctamente.")
     else:
         print("Índice no válido.")
